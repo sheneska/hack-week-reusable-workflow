@@ -1,4 +1,4 @@
-name: Acceptance Tests (kind)
+name: Kind Test
 
 on:
   workflow_dispatch:
