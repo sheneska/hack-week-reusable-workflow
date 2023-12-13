@@ -10,11 +10,8 @@ on:
     branches:
       - main
 
-env:
-  KIND_VERSION: ${{ github.event.inputs.kindVersion || vars.KIND_VERSION }}
-
 jobs:
   kind_test:
     uses: ./.github/workflows/reusable_kind_test.yml
     with:
-      kind_version: ${{ env.KIND_VERSION }}
+      kind_version: ${{ github.event.inputs.kindVersion || vars.KIND_VERSION }}
