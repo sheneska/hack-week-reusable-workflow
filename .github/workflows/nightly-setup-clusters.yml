@@ -1,0 +1,16 @@
+name: Nightly Set Up Clusters
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+
+jobs:
+  set_up_kind:
+    uses: ./.github/workflows/reusable_kind_test.yml
+    with:
+      kind_version: ${{ vars.KIND_VERSION }}
+  set_up_eks:
+    uses: ./.github/workflows/reusable-setup-eks.yml
+    needs: [set_up_kind]
+    with:
+      kubernetes_version: ${{ vars.KUBERNETES_VERSION }}
