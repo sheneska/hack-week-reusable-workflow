@@ -15,4 +15,4 @@ env:
 
 jobs:
   kind_test:
-    uses: sheneska/hack-week-reuasble-workflow/.github/workflows/reuasble_kind_test.yml@add-simpleworkflow
+    uses: ./.github/workflows/reusable_kind_test.yml
