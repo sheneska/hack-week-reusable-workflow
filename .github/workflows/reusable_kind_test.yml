@@ -1,0 +1,18 @@
+name: Reusable kind Test
+
+on:
+  workflow_call: 
+    inputs:
+      kind_version:
+        required: true
+        type: string
+
+jobs:
+  reusable_kind_test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup reusable kind
+        uses: helm/kind-action@fa81e57adff234b2908110485695db0f181f3c67 # v1.7.0
+        with:
+          wait: 2m
+          version: v${{ inputs.kind_version }}
