@@ -16,3 +16,5 @@ env:
 jobs:
   kind_test:
     uses: ./.github/workflows/reusable_kind_test.yml
+    with:
+      kind_version: ${{ env.KIND_VERSION }}
