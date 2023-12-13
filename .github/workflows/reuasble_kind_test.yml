@@ -1,14 +1,6 @@
 name: Reusable kind Test
 
 on:
-  workflow_dispatch:
-    inputs:
-      kindVersion:
-        description: The kind version
-        default: 0.20.0 # Kubernetes version: 1.27.X
-  pull_request:
-    branches:
-      - main
   workflow_call: 
 
 jobs:
